@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class AvatarComponent implements OnInit {
 
 	avatar = {
+		gender: 'male',
 		hair: {
 			visible: true,
 			color: '#bca73a'
@@ -29,5 +30,9 @@ export class AvatarComponent implements OnInit {
 
 	toggle(type) {
 		this.avatar[type].visible = !this.avatar[type].visible;
+	}
+
+	toggleGender() {
+		this.avatar.gender = this.avatar.gender === 'male' ? 'female' : 'male';
 	}
 }
