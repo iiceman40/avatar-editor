@@ -12,6 +12,10 @@ export class AvatarComponent implements OnInit {
 			visible: true,
 			color: '#bca73a'
 		},
+		beard: {
+			visible: true,
+			color: '#bca73a'
+		},
 		eyes: {
 			color: '#11686c'
 		}
@@ -23,7 +27,7 @@ export class AvatarComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	toggleHair() {
-		this.avatar.hair.visible = !this.avatar.hair.visible;
+	toggle(type) {
+		this.avatar[type].visible = !this.avatar[type].visible;
 	}
 }
