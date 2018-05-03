@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Avatar} from '../../interfaces/avatar';
 
 @Component({
 	selector: 'app-avatar',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AvatarComponent implements OnInit {
 
-	avatar = {
+	avatar: Avatar = {
 		gender: 'male',
 		hair: {
 			visible: true,
@@ -28,11 +29,4 @@ export class AvatarComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	toggle(type) {
-		this.avatar[type].visible = !this.avatar[type].visible;
-	}
-
-	toggleGender() {
-		this.avatar.gender = this.avatar.gender === 'male' ? 'female' : 'male';
-	}
 }
