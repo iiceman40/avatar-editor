@@ -9,6 +9,7 @@ import {Avatar} from '../../interfaces/avatar';
 export class HairComponent implements OnInit {
 
 	@Input() avatar: Avatar;
+	@Input() mode: 'front' | 'back';
 
 	constructor() {
 	}
