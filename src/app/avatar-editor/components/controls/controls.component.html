@@ -1,15 +1,30 @@
-<div>
-  <button (click)="toggleGender()">Gender: {{avatar.gender}}</button>
-</div>
-<div>
-  <button (click)="toggle('hair')">Hair: {{avatar.hair.visible}}</button>
-  <input [(colorPicker)]="avatar.hair.color" [style.background]="avatar.hair.color"/>
-</div>
-<div>
-  <button (click)="toggle('beard')">Beard: {{avatar.beard.visible}}</button>
-  <input [(colorPicker)]="avatar.beard.color" [style.background]="avatar.beard.color"/>
-</div>
-<div>
-  <label>Eyes</label>
-  <input [(colorPicker)]="avatar.eyes.color" [style.background]="avatar.eyes.color"/>
-</div>
+<p>
+	<label>Gender</label>
+	<span *ngFor="let gender of availableItems.gender">
+		<button (click)="choose(gender)" [ngClass]="{active: avatar.gender.item === gender}">
+			{{gender.id}}
+		</button>
+	</span>
+</p>
+<p>
+	<label>Hair</label>
+	<span *ngFor="let hairStyle of availableItems.hair">
+		<button (click)="choose(hairStyle)" [ngClass]="{active: avatar.hair.item === hairStyle}">
+			{{hairStyle.id}}
+		</button>
+	</span>
+	<input class="ng-color-picker" [(colorPicker)]="avatar.hair.color" [style.background]="avatar.hair.color"/>
+</p>
+<p>
+	<label>Beard</label>
+	<span *ngFor="let beard of availableItems.beard">
+		<button (click)="choose(beard)" [ngClass]="{active: avatar.beard.item === beard}">
+			{{beard.id}}
+		</button>
+	</span>
+	<input class="ng-color-picker" [(colorPicker)]="avatar.beard.color" [style.background]="avatar.beard.color"/>
+</p>
+<p>
+	<label>Eyes</label>
+	<input class="ng-color-picker" [(colorPicker)]="avatar.eyes.color" [style.background]="avatar.eyes.color"/>
+</p>

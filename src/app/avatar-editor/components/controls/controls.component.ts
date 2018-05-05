@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Avatar} from '../../interfaces/avatar';
+import {AvailableItems} from '../../interfaces/available-items';
+import {Item} from '../../interfaces/item';
 
 @Component({
 	selector: 'app-controls',
@@ -9,6 +11,7 @@ import {Avatar} from '../../interfaces/avatar';
 export class ControlsComponent implements OnInit {
 
 	@Input() avatar: Avatar;
+	@Input() availableItems: AvailableItems;
 
 	constructor() {
 	}
@@ -16,11 +19,8 @@ export class ControlsComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	toggle(type) {
-		this.avatar[type].visible = !this.avatar[type].visible;
+	choose(item: Item) {
+		this.avatar[item.type].item = item;
 	}
 
-	toggleGender() {
-		this.avatar.gender = this.avatar.gender === 'male' ? 'female' : 'male';
-	}
 }
