@@ -11,18 +11,21 @@ export class AvatarComponent implements OnInit {
 
 	availableItems: AvailableItems = {
 		gender: [
-			{id: 'male', type: 'gender', gender: 'male'},
-			{id: 'female', type: 'gender', gender: 'female'}
+			{id: 'male', type: 'gender', availability: {gender: {female: true, male: true}}},
+			{id: 'female', type: 'gender', availability: {gender: {female: true, male: true}}}
 		],
 		hair: [
-			{id: 'none', type: 'hair', gender: 'male'},
-			{id: 'short', type: 'hair', gender: 'male'},
-			{id: 'curled', type: 'hair', gender: 'male'}
+			{id: 'none', type: 'hair', availability: {gender: {female: true, male: true}}},
+			{id: 'formal', type: 'hair', availability: {gender: {male: true}}},
+			{id: 'styled', type: 'hair', availability: {gender: {male: true}}},
+			{id: 'curled', type: 'hair', availability: {gender: {male: true}}},
+			{id: 'wave', type: 'hair', availability: {gender: {female: true, male: true}}}
 		],
 		beard: [
-			{id: 'none', type: 'beard', gender: 'male'},
-			{id: 'light', type: 'beard', gender: 'male'}
-		]
+			{id: 'none', type: 'beard', availability: {gender: {male: true}}},
+			{id: 'light', type: 'beard', availability: {gender: {male: true}}}
+		],
+		eyes: []
 	};
 
 	avatar: Avatar = {

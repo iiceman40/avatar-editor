@@ -1,5 +1,10 @@
 export interface Item {
 	id: string;
 	type: string;
-	gender: 'male' | 'female';
+	availability: {
+		gender: {
+			male?: boolean,
+			female?: boolean
+		}
+	};
 }

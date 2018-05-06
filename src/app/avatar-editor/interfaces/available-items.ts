@@ -4,4 +4,5 @@ export interface AvailableItems {
 	gender: Item[];
 	hair: Item[];
 	beard: Item[];
+	eyes: Item[];
 }

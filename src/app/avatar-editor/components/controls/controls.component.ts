@@ -14,6 +14,7 @@ export class ControlsComponent implements OnInit {
 	@Input() availableItems: AvailableItems;
 
 	constructor() {
+		// TODO watch gender changes to reset items
 	}
 
 	ngOnInit() {
