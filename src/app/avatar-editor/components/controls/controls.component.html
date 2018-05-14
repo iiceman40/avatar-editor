@@ -4,20 +4,28 @@
 <ng-container *ngTemplateOutlet="itemsTemplate; context:{type: 'eyes', label: 'Eyes'}"></ng-container>
 
 <ng-template #itemsTemplate let-id="id" let-type="type" let-label="label">
-	<div>
-		<label>{{label}}</label>
-		<span *ngFor="let item of availableItems[type]">
-		<button (click)="choose(item)"
-		        [ngClass]="{active: avatar.beard.item === beard}"
-		        *ngIf="item.availability.gender[avatar.gender.item.id]"
-		>
-			{{item.id}}
-		</button>
-	</span>
-		<input class="ng-color-picker"
-		       [(colorPicker)]="avatar[type].color"
-		       [style.background]="avatar[type].color"
-		       *ngIf="avatar[type].color"
-		/>
+	<div class="options">
+		<h3>
+			{{label}}
+			<input class="ng-color-picker"
+			       [(colorPicker)]="avatar[type].color"
+			       [style.background]="avatar[type].color"
+			       *ngIf="avatar[type].color"
+			/>
+		</h3>
+		<div class="option" *ngFor="let item of availableItems[type]">
+			<button (click)="choose(item)"
+			        [ngClass]="{active: avatar[type].item === item}"
+			        *ngIf="item.availability.gender[avatar.gender.item.id]"
+			>
+				<span class="btn-label" *ngIf="item.id === 'none'">{{item.id}}</span>
+				<svg class="preview" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+					<g app-head [gender]="{item: item}" *ngIf="type === 'gender'"></g>
+					<g app-hair [hair]="{item: item, color: avatar[type].color}" *ngIf="type === 'hair'"></g>
+					<g app-beard [beard]="{item: item, color: avatar[type].color}" *ngIf="type === 'beard'"></g>
+					<g app-face [gender]="{item: item}" [eyes]="{color: avatar[type].color}" *ngIf="type === 'eyes'"></g>
+				</svg>
+			</button>
+		</div>
 	</div>
 </ng-template>

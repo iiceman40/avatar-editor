@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Avatar} from '../../interfaces/avatar';
+import {Beard} from '../../interfaces/beard';
 
 @Component({
 	selector: 'g[app-beard]',
@@ -8,7 +8,7 @@ import {Avatar} from '../../interfaces/avatar';
 })
 export class BeardComponent implements OnInit {
 
-	@Input() avatar: Avatar;
+	@Input() beard: Beard;
 
 	constructor() {
 	}

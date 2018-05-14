@@ -1,11 +1,16 @@
-<svg class="avatar" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-	<g app-background [avatar]="avatar"></g>
-	<g app-hair [avatar]="avatar" [mode]="'back'"></g>
-	<g app-head [avatar]="avatar"></g>
-	<g app-hair [avatar]="avatar" [mode]="'front'"></g>
-	<g app-face [avatar]="avatar"></g>
-	<g app-beard [avatar]="avatar"></g>
-	<g app-cloths [avatar]="avatar"></g>
-</svg>
-
-<app-controls [avatar]="avatar" [availableItems]="availableItems"></app-controls>
+<div class="row">
+	<div class="col">
+		<svg class="avatar" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+			<g app-background [avatar]="avatar"></g>
+			<g app-hair [hair]="avatar.hair" [mode]="'back'"></g>
+			<g app-head [gender]="avatar.gender"></g>
+			<g app-hair [hair]="avatar.hair" [mode]="'front'"></g>
+			<g app-face [eyes]="avatar.eyes" [gender]="avatar.gender"></g>
+			<g app-beard [beard]="avatar.beard"></g>
+			<g app-cloths [avatar]="avatar"></g>
+		</svg>
+	</div>
+	<div class="col">
+		<app-controls [avatar]="avatar" [availableItems]="availableItems"></app-controls>
+	</div>
+</div>

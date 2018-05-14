@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Avatar} from '../../interfaces/avatar';
+import {Gender} from '../../interfaces/gender';
 
 @Component({
 	selector: 'g[app-head]',
@@ -8,7 +8,7 @@ import {Avatar} from '../../interfaces/avatar';
 })
 export class HeadComponent implements OnInit {
 
-	@Input() avatar: Avatar;
+	@Input() gender: Gender;
 
 	constructor() {
 	}

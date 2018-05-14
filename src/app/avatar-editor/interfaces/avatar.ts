@@ -1,20 +1,11 @@
-import {Item} from './item';
+import {Hair} from './hair';
+import {Beard} from './beard';
+import {Gender} from './gender';
+import {Eyes} from './eyes';
 
 export interface Avatar {
-	gender: {
-		item: Item;
-	};
-	hair: {
-		visible: boolean;
-		item: Item;
-		color: string
-	};
-	beard: {
-		visible: boolean;
-		item: Item;
-		color: string
-	};
-	eyes: {
-		color: string
-	};
+	gender: Gender;
+	hair: Hair;
+	beard: Beard;
+	eyes: Eyes;
 }

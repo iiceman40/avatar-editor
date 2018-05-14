@@ -22,10 +22,12 @@ export class AvatarComponent implements OnInit {
 			{id: 'wave', type: 'hair', availability: {gender: {female: true, male: true}}}
 		],
 		beard: [
-			{id: 'none', type: 'beard', availability: {gender: {male: true}}},
+			{id: 'none', type: 'beard', availability: {gender: {female: true, male: true}}},
 			{id: 'light', type: 'beard', availability: {gender: {male: true}}}
 		],
-		eyes: []
+		eyes: [
+			{id: 'default', type: 'eyes', availability: {gender: {female: true, male: true}}}
+		]
 	};
 
 	avatar: Avatar = {
@@ -43,6 +45,7 @@ export class AvatarComponent implements OnInit {
 			color: '#bca73a'
 		},
 		eyes: {
+			item: this.availableItems.eyes[0] || null,
 			color: '#11686c'
 		}
 	};

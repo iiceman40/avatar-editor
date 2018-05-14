@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Avatar} from '../../interfaces/avatar';
+import {Eyes} from '../../interfaces/eyes';
+import {Gender} from '../../interfaces/gender';
 
 @Component({
 	selector: 'g[app-face]',
@@ -8,7 +9,8 @@ import {Avatar} from '../../interfaces/avatar';
 })
 export class FaceComponent implements OnInit {
 
-	@Input() avatar: Avatar;
+	@Input() eyes: Eyes;
+	@Input() gender: Gender;
 
 	constructor() {
 	}

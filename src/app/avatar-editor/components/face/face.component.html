@@ -1,12 +1,12 @@
 <svg>
-	<path class="st12 eye eye-left" [ngStyle]="{fill: avatar.eyes.color}"
+	<path class="st12 eye eye-left" [ngStyle]="{fill: eyes.color}"
 	      d="M209.9,153.1c6.2,0,11.3,5.7,11.3,12.8c0,7.1-5.1,12.8-11.3,12.8c-6.2,0-11.3-5.8-11.3-12.8    C198.6,158.8,203.6,153.1,209.9,153.1"/>
-	<path class="st12 eye eye-right" [ngStyle]="{fill: avatar.eyes.color}"
+	<path class="st12 eye eye-right" [ngStyle]="{fill: eyes.color}"
 	      d="M301.7,153.1c6.2,0,11.3,5.7,11.3,12.8c0,7.1-5.1,12.8-11.3,12.8c-6.2,0-11.3-5.8-11.3-12.8    C290.4,158.8,295.5,153.1,301.7,153.1"/>
-	<g *ngIf="avatar.gender.item.id === 'male'">
+	<g *ngIf="gender.item.id === 'male'">
 		<path class="st1 mouth mouth-male" d="M232.5,234.3c4,8.9,13,15.1,23.3,15.1c10.4,0,19.3-6.2,23.4-15.1H232.5z"/>
 	</g>
-	<g transform="translate(0, -10)" *ngIf="avatar.gender.item.id === 'female'">
+	<g transform="translate(0, -10)" *ngIf="gender.item.id === 'female'">
 		<path class="st6"
 		      d="M268.5,261.2c0,0,0.5,7.9-13,7.9c-3.9,0-12.8-1.7-12.8-7.7C250.6,263.4,260,263.8,268.5,261.2"/>
 		<path class="st7"

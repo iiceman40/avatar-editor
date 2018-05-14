@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Avatar} from '../../interfaces/avatar';
+import {Item} from '../../interfaces/item';
 
 @Component({
 	selector: 'g[app-hair]',
@@ -8,8 +8,8 @@ import {Avatar} from '../../interfaces/avatar';
 })
 export class HairComponent implements OnInit {
 
-	@Input() avatar: Avatar;
-	@Input() mode: 'front' | 'back';
+	@Input() hair: Item;
+	@Input() mode: 'front' | 'back' = 'front';
 
 	constructor() {
 	}

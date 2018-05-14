@@ -1,5 +1,15 @@
 .avatar {
-  width: 512px;
-  height: 512px;
+  width: 900px;
+  max-height: 900px;
   max-width: 100%;
+  vertical-align: top;
+}
+
+.row {
+  clear: both;
+}
+
+.col {
+  float: left;
+  width: 50%;
 }
